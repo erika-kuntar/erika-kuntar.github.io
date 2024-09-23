@@ -1,0 +1,22 @@
+os: linux
+arch:
+- arm64
+language: python
+python:
+- '3.7'
+install: skip
+script: true
+before_deploy:
+- yes | gem update --system --force
+- gem install bundler
+- gem install uri
+- gem install logger
+deploy:
+  provider: pages:git
+  edge: true
+  github_token: "$GITHUB_TOKEN"
+  on:
+    branch: main
+env:
+  global:
+    secure: KfH0Fow9x0QM11ivBQRqJ2n3+lGpLx0VaASLmoZed1QHdoZcnX4+vT5TtB4DJKgf7stoefwbQArPau19tAh2JtTYHuzcQRLiaPa2TjSjpkjvPzc+fhFZNw20XNCgRvls2UfizebGS2vby++qHUra9g9BLqIMXQR617tjliIDstfm6FzmXYHQyRsLIzc/ne5vvAYc/GgsZBjCaVa8g0pmN9Vi4QcKFM7xZNRoObaXNKQvrTq6yMU/Hez0vT7ROJvrWuoMbvqQfLjaHyPc4FYJx1dMV/tQnMQmReb+sdht1LZOLhIEbxTkIUV7bsDXz77tswPWiFimvtHQgX0BIKPFx7p/R7J+6j4UiD8myVJsFPc+mtPlDgxE5VCTC/q2R2OcyD2Pm1sWy5d8lLZrbNJXpYm2oKi7VAjFMfOENW/blDjKQu/xXw4K8FoZ8Nhxdt2BpFnNOqs0PBTvla54+PsMjsF7HBBla/7szYhdea+1QT2VkoqbYPZl8xNIvvFAQ3WLILXRYyAKHWq1ZQJmxxPy8zJgcv4hBa4xGVs5eVDf7MukHuJfmrcghDjI9TWuVxfsJBdKdgEf1Ala1xEoJb6M6WhIQcHCjaKYZiLwb0ouXQ4oqBoUpAkBJTlaEFJXdax56gtbsOJ5RedJ4/ox0HiCm1IdRuuyj2GKy01YpCN+7BQ=
