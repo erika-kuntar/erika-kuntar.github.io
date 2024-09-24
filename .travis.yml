@@ -18,6 +18,7 @@ deploy:
   github_token: "$GITHUB_TOKEN"
 #  keep_history: true
 #  skip_cleanup: true
+  verbose: true
   on:
     branch: main
 env:
