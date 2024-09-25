@@ -14,8 +14,7 @@ before_deploy:
 - gem install logger
 deploy:
   provider: pages
-  edge:
-    branch: "2.0.5.beta.2.1"
+  edge: true
   github_token: "$GITHUB_TOKEN"
 #  keep_history: true
 #  skip_cleanup: true
