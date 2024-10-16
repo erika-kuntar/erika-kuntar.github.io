@@ -7,11 +7,11 @@ python:
 - '3.7'
 install: skip
 script: true
-#before_deploy:
-#- yes | gem update --system --force
-#- gem install bundler
-#- gem install uri
-#- gem install logger
+before_deploy:
+- yes | gem update --system --force
+- gem install bundler
+- gem install uri
+- gem install logger
 deploy:
   provider: pages
   edge: 
